@@ -75,18 +75,24 @@ if [ "$yesno" == "yes" ]; then
   arquivo=programmes.txt
 
   while read line; do
-    
     sudo pacman -S $line --noconfirm
     echo
-    echo "              [INSTALLED] - $line "
-    echo
-
   done < "$arquivo"
 
   while read line
   do
-    echo "[INSTALLED] - $line"
+    echo "             [INSTALLED] - $line"
   done < "$arquivo"
+  echo
+  echo
+  echo
+  echo "                    E N D "
+  sleep 1
+  echo
+  ./Customisation.sh
+
+
+
 
 
 elif [ "$yesno" == "no" ]; then
