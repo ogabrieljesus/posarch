@@ -75,7 +75,7 @@ if [ "$yesno" == "yes" ]; then
   arquivo=programmes.txt
 
   while read line; do
-  then
+    
     sudo pacman -S $line --noconfirm
     echo
     echo "              [INSTALLED] - $line "
