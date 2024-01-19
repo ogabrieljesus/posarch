@@ -74,16 +74,18 @@ if [ "$yesno" == "yes" ]; then
 
   arquivo=programmes.txt
 
+  while read line; do
+  then
+    sudo pacman -S $line --noconfirm
+    echo
+    echo "              [INSTALLED] - $line "
+    echo
+
+  done < "$arquivo"
+
   while read line
   do
-    sudo pacman -S $line
-    echo
-    echo "              [INSTALLED] - $line"
-    echo
-    cd Customisation
-    sleep 0.5
-    ./loading1.sh
-
+    echo "[INSTALLED] - $line"
   done < "$arquivo"
 
 
